@@ -23,6 +23,7 @@
                     id="animated-asset"
                     src="assets/asset.gltf"
                 ></a-asset-item>
+                <img id="hdr-map" src="assets/studio_small.exr">
             </a-assets>
 
             <a-marker
@@ -44,40 +45,19 @@
                     gesture-handler
                 ></a-entity>
 
-                            <!-- Key light for the 3D model -->
-                <a-light
-                    type="directional"
-                    color="#ffffff"
-                    intensity="1.5"
-                    position="2 4 4"
-                    target="#bowser-model"
-                ></a-light>
-                <a-light
-                    type="directional"
-                    color="#ffffff"
-                    intensity="0.8"
-                    position="-4 4 2"
-                    target="#bowser-model"
-                ></a-light>
-
-            <!-- Right light -->
-                <a-light
-                    type="directional"
-                    color="#ffffff"
-                    intensity="0.8"
-                    position="4 4 2"
-                    target="#bowser-model"
-                ></a-light>
-
-                <!-- Back light -->
-                <a-light
-                    type="directional"
-                    color="#ffffff"
-                    intensity="0.5"
-                    position="0 4 -4"
-                    target="#bowser-model"
-                ></a-light>
             </a-marker>
+                    <!-- HDR sky -->
+            <a-sky
+                src="#hdr-map"
+                color="#ffffff"
+            ></a-sky>
+
+            <!-- Ambient light to complement the HDR lighting -->
+            <a-light
+                type="ambient"
+                color="#ffffff"
+                intensity="0.5"
+            ></a-light>
 
             <a-entity camera></a-entity>
         </a-scene>
